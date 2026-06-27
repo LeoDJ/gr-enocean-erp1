@@ -26,3 +26,24 @@ The decoding of the demodulated bitstream is done in a python module block (incl
 
 ### Resources
 - ERP1 Protocol Spec: https://www.enocean.com/wp-content/uploads/support/download/EnOceanRadioProtocol1.pdf
+- EEP (data packet) definitions: https://tools.enocean-alliance.org/EEPViewer/#1
+- STM300 transceiver module documentation: https://www.enocean.com/wp-content/uploads/downloads-produkte/en/products/enocean_modules/stm-300/user-manual-pdf/STM300x_UserManual_Dec2021.pdf
+- Thermokon SR04 (sensor) datasheet: https://www.thermokon.de/direct/alterra-base/mimes/get/e76366f5494cb1001
+
+### Example decoded data
+Here is some example data from sensors using the `A5-02-05` EEP. The byte 03 contains the actual temperature value, while bytes 05-08 contain the transmitter ID.  
+For more detailed information, look into the ERP1 spec / EEP definitions.
+
+```
+00 01 02 03 04 05 06 07 08 09 0A
+--------------------------------
+A5 00 00 56 08 05 12 43 70 01 CE
+A5 00 00 56 08 05 12 43 70 00 CD
+A5 00 00 64 08 05 09 70 3D 01 CD
+A5 00 00 54 08 05 10 D8 8C 01 7B
+A5 00 00 5F 08 05 03 07 9E 01 BA
+A5 00 00 55 08 05 14 46 E7 00 48
+A5 00 00 55 08 05 14 46 E7 01 49
+A5 00 00 5B 08 05 09 A2 CC 01 85
+```
+(Abbreviated. Every sensor sends the data 3 times.)
