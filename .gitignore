@@ -1,0 +1,8 @@
+*.bin
+*.bits
+*.iq
+*.wav
+*.pdf
+*.pyc
+
+*.py
